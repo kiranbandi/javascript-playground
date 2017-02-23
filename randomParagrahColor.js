@@ -13,3 +13,4 @@ function randomColor() {
 (function() {
     randomiseParagraphColor();
 })();
+
