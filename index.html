@@ -1,0 +1,97 @@
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Demo</title>
+        <style type="text/css">
+           
+            
+            .button1{
+    padding: 10px;
+    background-color: #94B8E9;
+    border: 3px solid black;
+    border-radius: 55px;
+    float: left;
+    margin-right: 8px;
+    font-size: 20px;
+    cursor: pointer;
+                
+            }
+            
+            button:hover{
+                background-color: #369;
+                 color: #000;
+                 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+            }
+            
+            .container{
+                border: 1px solid black;
+                padding: 5px;
+            }
+			.container1{
+                border: 1px solid black;
+                padding: 5px;
+            }
+            div{
+			margin-bottom: 20px;
+			}
+			
+           
+
+        </style>
+
+    </head>
+    
+    <body>
+        <div id="container">
+            <div id="demo2"></div>
+       </div>
+       <div >
+            <button onclick="textReset()" class="button1">Reset</button>      
+             <button onclick="randomiseParagraphColor()" class="button1">ChangeParagraphColour</button>
+             <button onclick="changeColor()" class="button1">FirstWordColour</button>
+             <a href=""> <button class="button1">PacMan</button></a> 
+      </div>
+      
+    <script>
+
+                  function textReset(){
+                 var original = "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque facilisis auctor ex vitae commodo. Duis quis posuere neque, non iaculis ante. Integer faucibus dapibus metus, eget rhoncus dolor porta vitae. Duis id felis lobortis, auctor nunc ac, auctor massa. Vivamus commodo eleifend sapien at pharetra. Praesent iaculis mauris eget arcu blandit blandit. Mauris malesuada odio in ligula porttitor, eu interdum arcu faucibus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam at diam sed enim facilisis luctus id non arcu. Suspendisse a gravida elit, nec feugiat tellus.</p><p>Donec pellentesque nisi vel pulvinar consequat. Etiam condimentum libero et ante tristique pharetra. Maecenas sit amet libero venenatis, viverra est nec, lacinia mi. Quisque convallis tellus quis dolor ullamcorper, ac imperdiet nisl tristique. Mauris sollicitudin augue in leo cursus, sit amet lobortis felis accumsan. Maecenas augue ante, facilisis vitae nisl id, dignissim eleifend est. Cras blandit molestie blandit. Ut eu nulla at dolor rhoncus euismod. Morbi turpis ante, tempus vel blandit non, hendrerit nec mi. Curabitur eu nunc tellus. Nulla facilisi. Ut sem lectus, placerat id metus sed, dictum fringilla odio<p> <p> Ut dignissim tincidunt mauris id consectetur. Donec laoreet in turpis at commodo. Praesent accumsan elit in nulla sagittis, sit amet tristique mauris fringilla. Aenean ut felis non ex fringilla dictum sit amet eu odio. Vivamus a ex cursus tellus consectetur rutrum. Duis eget lorem id diam volutpat cursus. Ut placerat eros non arcu dapibus, sit amet varius nunc pretium.<p> <p>Nunc aliquam porta arcu ut porttitor. Suspendisse vestibulum ipsum urna, ac pharetra orci ornare et. Integer ac quam quis felis viverra ornare ac gravida velit. Vivamus at eros pretium, malesuada magna ac, convallis sapien. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam nec porta lacus, eu ultricies diam. Etiam nunc dolor, finibus quis pellentesque ac, luctus sed nisl. Proin id enim sed nibh cursus ultrices a vitae augue. Nunc vitae dignissim mauris, vel condimentum turpis. Phasellus eros nulla, blandit sit amet erat et, bibendum cursus urna. Donec orci massa, tempus non massa quis, sagittis fringilla lacus. Aliquam erat volutpat. Aenean rhoncus, ex egestas tempor condimentum, elit dui malesuada odio, vitae consectetur ligula ante in magna. Nullam interdum arcu non elit hendrerit, non malesuada ante faucibus.<p>Ut quis auctor lacus, vitae rhoncus lectus. Pellentesque tempor velit velit. In molestie dapibus nunc, non sagittis est egestas bibendum. Duis ac velit porta, vestibulum urna in, eleifend risus. Donec mollis vulputate sollicitudin. Mauris nibh leo, suscipit malesuada erat a, consequat rhoncus mauris. Nullam sed dui in sapien faucibus accumsan interdum vitae velit. Maecenas semper gravida diam, rutrum auctor ipsum varius vitae. Sed a odio vitae lorem accumsan rutrum. Duis ac arcu at neque pretium feugiat nec quis risus. Etiam accumsan lorem risus, at lacinia quam lacinia id. Pellentesque laoreet iaculis libero, vel viverra sapien pellentesque sed. Morbi vestibulum turpis sit amet orci tempus, vitae consectetur nisi ullamcorper.<p> ";
+                 document.getElementById("demo2").innerHTML = original ;
+             }
+
+
+            function randomiseParagraphColor() {
+              textReset()
+            var paraArray = document.getElementsByTagName('p');
+           
+            [].forEach.call(paraArray, function(value, index) {
+            value.style.color = randomColor();
+                 });
+            }
+
+            function randomColor() {
+
+            return "#" + Math.floor((Math.random() * 1000000) + 1); 
+            }
+
+           function changeColor(){
+            textReset()
+            var paraWords = document.getElementsByTagName('p');
+            paraWords.forEach = [].forEach;
+            paraWords.forEach(function (value){
+            var firstWord = value.innerHTML.split(" ");
+            var change = '<span style=color:'+randomColor()+'>'+firstWord[0]+'</span>';
+      firstWord[0]=change;
+      value.innerHTML=firstWord.join(" ");
+            })
+            }
+
+       </script>
+        </body>
+        </html>
+
+
+
